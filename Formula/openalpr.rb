@@ -13,8 +13,10 @@ class Openalpr < Formula
   def install
     mkdir "src/build" do
       args = std_cmake_args
+      args << "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}"
       args << "-DCMAKE_MACOSX_RPATH=true"
       args << "-DWITH_DAEMON=NO"
+      args << "-DCMAKE_INSTALL_SYSCONFDIR:PATH=#{etc}"
       system "cmake", "..", *args
       system "make", "install"
     end
