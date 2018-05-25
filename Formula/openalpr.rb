@@ -6,6 +6,7 @@ class Openalpr < Formula
   head "https://github.com/openalpr/openalpr.git", :branch => "master"
 
   depends_on "cmake" => :build
+  depends_on "leptonica"
   depends_on "libtiff"
   depends_on "tesseract"
   depends_on "opencv"
